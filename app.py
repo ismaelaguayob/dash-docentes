@@ -64,6 +64,8 @@ def procesar_datos_para_grafico(df, variable_x):
 # Initialize the app
 app = Dash(__name__, external_scripts=external_scripts, external_stylesheets=external_stylesheets)
 
+server = app.server
+
 # CSS personalizado (sin cambios, ya tienes el z-index alto para Select-menu-outer)
 app.index_string = '''
 <!DOCTYPE html>
@@ -193,4 +195,4 @@ def update_graph(col_chosen, variable_x):
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
